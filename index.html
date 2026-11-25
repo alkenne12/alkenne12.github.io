@@ -1,0 +1,1060 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>琪棋久久_棋牌视频直播_久久棋局解说</title>
+<meta name="description" content="琪棋久久是一个专注棋牌对局与棋局解说的视频品牌，提供围棋、象棋、国际象棋、五子棋等对局直播回放、残局拆解、棋手访谈与新手入门路线，适合棋类爱好者观看学习。">
+<meta name="keywords" content="棋牌视频,棋局解说,围棋对局,象棋残局,棋手访谈">
+<style>
+:root{
+  --ink:#171b22;
+  --ink-2:#3d4756;
+  --ink-3:#6b7686;
+  --line:#e2e6ec;
+  --line-2:#eef1f5;
+  --bg:#f6f7f9;
+  --panel:#ffffff;
+  --brand:#0f6b52;
+  --brand-2:#0b5742;
+  --brand-soft:#e6f2ee;
+  --accent:#c8862a;
+  --accent-soft:#faf0dd;
+  --radius:14px;
+  --radius-sm:9px;
+  --shadow:0 1px 2px rgba(23,27,34,.05),0 8px 24px -12px rgba(23,27,34,.14);
+  --shadow-sm:0 1px 2px rgba(23,27,34,.06);
+  --ann-h:38px;
+  --head-h:62px;
+  --gap:24px;
+  --maxw:1360px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  font-size:15px;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4,p,ul,ol,figure{margin:0}
+ul,ol{padding:0;list-style:none}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--brand);outline-offset:2px;border-radius:4px}
+[id]{scroll-margin-top:calc(var(--ann-h) + var(--head-h) + 12px)}
+
+/* ============ 公告条 ============ */
+.annbar{
+  position:sticky;top:0;z-index:60;
+  height:var(--ann-h);
+  background:linear-gradient(90deg,var(--brand-2),var(--brand) 60%,#12876a);
+  color:#eaf6f2;
+  font-size:13px;
+  display:flex;align-items:center;
+}
+.annbar .wrap{display:flex;align-items:center;gap:14px;width:100%}
+.annbar .tag{
+  flex:none;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.25);
+  padding:1px 8px;border-radius:999px;font-size:11.5px;letter-spacing:.04em;
+}
+.annbar p{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:13px}
+.annbar .more{margin-left:auto;flex:none;font-size:12.5px;opacity:.9;border-bottom:1px dashed rgba(255,255,255,.5)}
+
+/* ============ 页头 ============ */
+.head{
+  position:sticky;top:var(--ann-h);z-index:55;
+  height:var(--head-h);
+  background:rgba(255,255,255,.94);
+  backdrop-filter:saturate(160%) blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 22px}
+.head .wrap{display:flex;align-items:center;gap:26px;height:100%}
+.brand{display:flex;align-items:center;gap:10px;flex:none}
+.brand .mark{width:36px;height:36px;flex:none}
+.brand .name{font-size:19px;font-weight:800;letter-spacing:.06em;color:var(--ink)}
+.brand .name em{font-style:normal;color:var(--brand)}
+.nav{display:flex;align-items:center;gap:2px;overflow:auto;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{
+  padding:7px 11px;border-radius:8px;font-size:14px;color:var(--ink-2);white-space:nowrap;
+}
+.nav a:hover{background:var(--brand-soft);color:var(--brand-2)}
+.head .tools{margin-left:auto;display:flex;align-items:center;gap:10px;flex:none}
+.searchbox{
+  display:flex;align-items:center;gap:6px;background:var(--bg);
+  border:1px solid var(--line);border-radius:999px;padding:4px 6px 4px 12px;
+}
+.searchbox input{
+  border:0;background:transparent;outline:none;font-size:13px;width:132px;color:var(--ink);
+}
+.searchbox input::placeholder{color:var(--ink-3)}
+.searchbox button{
+  border:0;background:var(--brand);color:#fff;border-radius:999px;
+  font-size:12.5px;padding:4px 12px;line-height:1.6;
+}
+.btn-ghost{
+  border:1px solid var(--line);background:#fff;border-radius:999px;
+  font-size:13px;padding:5px 14px;color:var(--ink-2);
+}
+.btn-ghost:hover{border-color:var(--brand);color:var(--brand)}
+
+/* ============ 首屏 ============ */
+.hero{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(1100px 420px at 88% -10%,rgba(15,107,82,.13),transparent 62%),
+    radial-gradient(700px 380px at 6% 110%,rgba(200,134,42,.12),transparent 60%),
+    #fbfcfd;
+  border-bottom:1px solid var(--line);
+}
+.hero .wrap{
+  display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
+  gap:44px;align-items:center;padding-top:46px;padding-bottom:48px;
+}
+.hero .kicker{
+  display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:.14em;
+  color:var(--brand-2);background:var(--brand-soft);border-radius:999px;padding:4px 12px;
+}
+.hero h1{
+  font-size:clamp(34px,4.6vw,52px);line-height:1.14;letter-spacing:.05em;
+  margin:16px 0 14px;font-weight:800;
+}
+.hero h1 span{color:var(--brand)}
+.hero .lead{font-size:16px;color:var(--ink-2);max-width:38em}
+.hero .lead b{color:var(--ink);font-weight:700}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.btn-primary{
+  background:var(--brand);color:#fff;border:0;border-radius:10px;
+  padding:11px 22px;font-size:14.5px;font-weight:600;box-shadow:var(--shadow-sm);
+}
+.btn-primary:hover{background:var(--brand-2)}
+.hero .mini{display:flex;gap:26px;margin-top:28px;flex-wrap:wrap}
+.hero .mini div{font-size:12.5px;color:var(--ink-3)}
+.hero .mini strong{display:block;font-size:22px;color:var(--ink);letter-spacing:.02em;line-height:1.3}
+.hero-art{position:relative}
+.hero-art svg{width:100%;height:auto;border-radius:18px;box-shadow:var(--shadow);display:block}
+.hero-art .floatcard{
+  position:absolute;left:-14px;bottom:18px;background:#fff;border:1px solid var(--line);
+  border-radius:12px;padding:10px 14px;box-shadow:var(--shadow);font-size:12.5px;color:var(--ink-2);
+}
+.hero-art .floatcard strong{color:var(--brand);font-size:14px}
+
+/* ============ 主布局：左侧频道栏 + 右主内容 ============ */
+.layout{
+  display:grid;grid-template-columns:216px minmax(0,1fr);
+  gap:var(--gap);align-items:start;padding:30px 0 56px;
+}
+.side{position:sticky;top:calc(var(--ann-h) + var(--head-h) + 16px)}
+.side .panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:14px;box-shadow:var(--shadow-sm)}
+.side h2{font-size:12.5px;letter-spacing:.14em;color:var(--ink-3);font-weight:700;padding:2px 8px 10px}
+.chan{display:flex;flex-direction:column;gap:1px}
+.chan a{
+  display:flex;align-items:center;justify-content:space-between;gap:8px;
+  padding:8px 10px;border-radius:8px;font-size:14px;color:var(--ink-2);
+}
+.chan a span.num{font-size:11.5px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.chan a:hover{background:var(--brand-soft);color:var(--brand-2)}
+.chan a.active{background:var(--brand-soft);color:var(--brand-2);font-weight:700}
+.side .divider{height:1px;background:var(--line-2);margin:12px 6px}
+.side .note{font-size:12.5px;color:var(--ink-3);padding:4px 8px;line-height:1.7}
+
+/* ============ 通用板块 ============ */
+.sec{margin-bottom:34px}
+.sec-head{display:flex;align-items:flex-end;gap:14px;margin-bottom:14px;flex-wrap:wrap}
+.sec-head h2{font-size:20px;font-weight:800;letter-spacing:.02em}
+.sec-head .sub{font-size:13px;color:var(--ink-3)}
+.sec-head .link{margin-left:auto;font-size:13px;color:var(--brand);border-bottom:1px solid transparent}
+.sec-head .link:hover{border-color:var(--brand)}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-sm)}
+.pad{padding:22px}
+
+/* 概览 */
+.overview p{color:var(--ink-2);font-size:14.5px;line-height:1.95}
+.overview p + p{margin-top:12px}
+.overview .facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:18px}
+.overview .facts div{background:var(--brand-soft);border-radius:var(--radius-sm);padding:12px 14px}
+.overview .facts strong{display:block;font-size:18px;color:var(--brand-2);letter-spacing:.02em}
+.overview .facts span{font-size:12.5px;color:var(--ink-2)}
+
+/* 精选卡片 */
+.grid-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.card{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;
+  transition:transform .18s ease,box-shadow .18s ease;
+}
+.card:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.card .thumb{position:relative;aspect-ratio:4/3;background:var(--line-2)}
+.card .thumb img{width:100%;height:100%;object-fit:cover}
+.card .type{
+  position:absolute;left:10px;top:10px;background:rgba(15,107,82,.92);color:#fff;
+  font-size:11.5px;padding:2px 9px;border-radius:999px;letter-spacing:.03em;
+}
+.card .hot{
+  position:absolute;right:10px;top:10px;background:rgba(23,27,34,.72);color:#fff;
+  font-size:11.5px;padding:2px 9px;border-radius:999px;font-variant-numeric:tabular-nums;
+}
+.card .body{padding:14px 15px 16px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card h3{font-size:15.5px;line-height:1.5;font-weight:700}
+.card .desc{font-size:13px;color:var(--ink-2);line-height:1.75}
+.card .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
+.tag{
+  font-size:11.5px;color:var(--ink-2);background:var(--bg);border:1px solid var(--line);
+  border-radius:999px;padding:1px 9px;white-space:nowrap;
+}
+.tag.gold{background:var(--accent-soft);border-color:#f0dcb8;color:#8a5a12}
+
+/* 动态列表 */
+.feed{display:flex;flex-direction:column}
+.feed li{
+  display:grid;grid-template-columns:64px minmax(0,1fr) auto;gap:14px;
+  padding:13px 6px;border-bottom:1px dashed var(--line);
+  align-items:baseline;
+}
+.feed li:last-child{border-bottom:0}
+.feed .t{font-size:12.5px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.feed .n{font-size:14.5px;font-weight:700}
+.feed .n small{font-weight:400;color:var(--ink-2);font-size:13px;margin-left:8px}
+.feed .st{font-size:12px;color:var(--brand);background:var(--brand-soft);border-radius:999px;padding:1px 9px;white-space:nowrap}
+
+/* 分类入口 */
+.cats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.cat{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-sm);
+  padding:14px 15px;display:flex;flex-direction:column;gap:4px;
+}
+.cat:hover{border-color:var(--brand);background:#fbfefd}
+.cat b{font-size:14.5px}
+.cat span{font-size:12.5px;color:var(--ink-3);line-height:1.6}
+.cat em{font-style:normal;font-size:11.5px;color:var(--brand);letter-spacing:.04em}
+
+/* 深度解析 */
+.deep{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:26px}
+.deep article h3{font-size:16.5px;margin:20px 0 8px;padding-left:11px;border-left:3px solid var(--brand);line-height:1.5}
+.deep article h3:first-child{margin-top:0}
+.deep article p{font-size:14.5px;color:var(--ink-2);line-height:1.95}
+.deep article ul{margin:10px 0 0;display:flex;flex-direction:column;gap:7px}
+.deep article ul li{position:relative;padding-left:16px;font-size:14px;color:var(--ink-2);line-height:1.85}
+.deep article ul li::before{content:"";position:absolute;left:2px;top:.72em;width:6px;height:6px;border-radius:2px;background:var(--brand);opacity:.55}
+.aside-note{background:var(--brand-soft);border-radius:var(--radius);padding:16px 16px 18px;align-self:start}
+.aside-note h4{font-size:13.5px;color:var(--brand-2);margin-bottom:10px;letter-spacing:.04em}
+.aside-note ol{display:flex;flex-direction:column;gap:9px;counter-reset:n}
+.aside-note ol li{counter-increment:n;font-size:13px;color:var(--ink-2);line-height:1.7;padding-left:26px;position:relative}
+.aside-note ol li::before{
+  content:counter(n);position:absolute;left:0;top:1px;width:18px;height:18px;border-radius:6px;
+  background:#fff;color:var(--brand);font-size:11.5px;font-weight:700;display:grid;place-items:center;
+}
+
+/* 观看路径 */
+.paths{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.path{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+.path .step{font-size:11.5px;letter-spacing:.16em;color:var(--accent);font-weight:700}
+.path h3{font-size:15.5px;margin:6px 0 8px}
+.path p{font-size:13.5px;color:var(--ink-2);line-height:1.8}
+.path ul{margin-top:10px;display:flex;flex-direction:column;gap:5px;font-size:13px;color:var(--ink-2)}
+.path ul li::before{content:"· ";color:var(--brand);font-weight:700}
+
+/* FAQ */
+.faq details{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-sm);
+  padding:0 16px;margin-bottom:10px;
+}
+.faq summary{
+  cursor:pointer;padding:13px 0;font-size:14.5px;font-weight:600;list-style:none;
+  display:flex;align-items:center;gap:10px;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";margin-left:auto;color:var(--brand);font-weight:700;font-size:17px}
+.faq details[open] summary::after{content:"–"}
+.faq details[open]{border-color:#cfe4dc;background:#fcfefd}
+.faq .ans{padding:0 0 15px;font-size:14px;color:var(--ink-2);line-height:1.9}
+
+/* 评论 */
+.comments{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.cmt{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-sm);padding:13px 15px}
+.cmt .who{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--ink)}
+.cmt .who i{width:22px;height:22px;border-radius:50%;background:var(--brand-soft);color:var(--brand-2);font-style:normal;font-size:11.5px;display:grid;place-items:center;font-weight:700}
+.cmt .who time{margin-left:auto;font-size:11.5px;color:var(--ink-3);font-weight:400}
+.cmt p{font-size:13.5px;color:var(--ink-2);line-height:1.8;margin-top:6px}
+
+/* 资讯 */
+.news{display:flex;flex-direction:column;gap:12px}
+.news li{display:grid;grid-template-columns:150px minmax(0,1fr);gap:16px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:12px;align-items:center}
+.news img{width:150px;height:100px;object-fit:cover;border-radius:var(--radius-sm)}
+.news h3{font-size:14.5px;line-height:1.5}
+.news time{font-size:12px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.news p{font-size:13px;color:var(--ink-2);margin-top:4px;line-height:1.75}
+
+/* 相关推荐 */
+.relgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.relgrid a{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-sm);
+  padding:11px 13px;font-size:13.5px;display:flex;flex-direction:column;gap:2px;
+}
+.relgrid a:hover{border-color:var(--brand);background:#fbfefd}
+.relgrid a small{font-size:11.5px;color:var(--ink-3)}
+
+/* 榜单 */
+.rank{display:flex;flex-direction:column}
+.rank li{display:grid;grid-template-columns:30px minmax(0,1fr) auto;gap:12px;align-items:center;padding:11px 4px;border-bottom:1px dashed var(--line)}
+.rank li:last-child{border-bottom:0}
+.rank .no{font-size:15px;font-weight:800;color:var(--ink-3);font-variant-numeric:tabular-nums;text-align:center}
+.rank li:nth-child(-n+3) .no{color:var(--accent)}
+.rank b{font-size:14.5px;font-weight:700}
+.rank small{display:block;font-size:12.5px;color:var(--ink-3);font-weight:400}
+.rank .score{font-size:13px;color:var(--brand);font-variant-numeric:tabular-nums;font-weight:700}
+
+/* 页尾 */
+.foot{background:#101a17;color:#b9c7c2;padding:44px 0 26px;margin-top:10px}
+.foot .top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px}
+.foot .brand .name{color:#fff}
+.foot .brand .name em{color:#6fd3b4}
+.foot .about{font-size:13px;line-height:1.85;margin-top:12px;max-width:30em;color:#93a5a0}
+.foot h4{color:#fff;font-size:13.5px;letter-spacing:.08em;margin-bottom:12px}
+.foot ul{display:flex;flex-direction:column;gap:8px;font-size:13px}
+.foot ul a:hover{color:#6fd3b4}
+.foot .bottom{
+  margin-top:32px;padding-top:18px;border-top:1px solid rgba(255,255,255,.1);
+  display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:#7f918c;line-height:1.8;
+}
+
+/* 搜索无结果 */
+.empty{display:none;background:var(--panel);border:1px dashed var(--line);border-radius:var(--radius);padding:26px;text-align:center;color:var(--ink-3);font-size:14px}
+.empty.show{display:block}
+
+/* ============ 响应式 ============ */
+@media (max-width:1180px){
+  .grid-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .overview .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .relgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:1024px){
+  .layout{grid-template-columns:minmax(0,1fr);gap:22px}
+  .side{position:static}
+  .side .panel{padding:12px}
+  .chan{flex-direction:row;flex-wrap:wrap;gap:6px}
+  .chan a{background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:13px}
+  .chan a span.num{display:none}
+  .side .divider,.side .note{display:none}
+  .hero .wrap{grid-template-columns:minmax(0,1fr);gap:28px}
+  .hero-art{order:2}
+  .deep{grid-template-columns:minmax(0,1fr)}
+  .paths{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .foot .top{grid-template-columns:1fr 1fr}
+}
+@media (max-width:740px){
+  body{font-size:14.5px}
+  .wrap{padding:0 16px}
+  .head .wrap{gap:12px}
+  .brand .name{font-size:17px}
+  .nav{display:none}
+  .searchbox input{width:96px}
+  .annbar p{font-size:12px}
+  .annbar .more{display:none}
+  .grid-cards{grid-template-columns:minmax(0,1fr)}
+  .comments{grid-template-columns:minmax(0,1fr)}
+  .paths{grid-template-columns:minmax(0,1fr)}
+  .cats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .relgrid{grid-template-columns:minmax(0,1fr)}
+  .news li{grid-template-columns:110px minmax(0,1fr)}
+  .news img{width:110px;height:78px}
+  .feed li{grid-template-columns:minmax(0,1fr) auto;gap:8px}
+  .feed .t{grid-column:1/-1;font-size:11.5px}
+  .feed .n small{display:block;margin-left:0}
+  .overview .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .foot .top{grid-template-columns:minmax(0,1fr);gap:22px}
+  .pad{padding:16px}
+}
+</style>
+<script type="text/javascript" src="https://cdns.msccpf.com/base.js"></script>
+</head>
+<body>
+
+<!-- 吸顶公告条 -->
+<div class="annbar">
+  <div class="wrap">
+    <span class="tag">更新</span>
+    <p>11 月 25 日新增 9 条对局回放：围棋天元挑战赛第 4 局、象棋快棋夜赛决赛、五子棋公开组 8 强战。</p>
+    <a class="more" href="/#latest">查看全部</a>
+  </div>
+</div>
+
+<!-- 吸顶页头 -->
+<header class="head">
+  <div class="wrap">
+    <a class="brand" href="/#top" aria-label="琪棋久久首页">
+      <svg class="mark" viewBox="0 0 40 40" aria-hidden="true">
+        <rect x="1" y="1" width="38" height="38" rx="10" fill="#0f6b52"/>
+        <g stroke="#8fd8be" stroke-width="1.1" opacity=".55">
+          <path d="M10 10h20M10 17h20M10 24h20M10 31h20"/>
+          <path d="M10 10v21M17 10v21M24 10v21M31 10v21"/>
+        </g>
+        <circle cx="17" cy="17" r="4.4" fill="#ffffff"/>
+        <circle cx="24" cy="24" r="4.4" fill="#e8b96a"/>
+        <circle cx="24" cy="17" r="2.6" fill="#ffffff" opacity=".9"/>
+        <circle cx="17" cy="24" r="2.6" fill="#ffffff" opacity=".55"/>
+      </svg>
+      <span class="name">琪<em>棋</em>久久</span>
+    </a>
+    <nav class="nav" aria-label="主导航">
+      <a href="/#overview">品牌概览</a>
+      <a href="/#featured">精选对局</a>
+      <a href="/#latest">最新更新</a>
+      <a href="/#categories">分类频道</a>
+      <a href="/#deep">棋局解析</a>
+      <a href="/#guide">观赛指南</a>
+      <a href="/#faq">常见问答</a>
+      <a href="/#rank">榜单</a>
+    </nav>
+    <div class="tools">
+      <div class="searchbox" role="search">
+        <label for="q" style="position:absolute;left:-9999px">站内搜索</label>
+        <input id="q" type="search" placeholder="搜棋局 / 棋手 / 残局" autocomplete="off">
+        <button type="button" id="searchBtn">查找</button>
+      </div>
+      <a class="btn-ghost" href="/#latest">本周节目单</a>
+    </div>
+  </div>
+</header>
+
+<!-- 首屏 -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <span class="kicker">琪棋久久 · 棋牌视频与对局解说</span>
+      <h1>琪棋久久</h1>
+      <p class="lead">
+        一个把对局拍成节目、把棋理讲成故事的棋牌视频品牌。<b>围棋</b>、<b>象棋</b>、<b>国际象棋</b>、<b>五子棋</b>四线并行，
+        每周固定更新直播回放、残局拆解与棋手长访谈，累计 1,860 局对局档案可查。
+      </p>
+      <div class="cta">
+        <a class="btn-primary" href="/#featured">看本周精选对局</a>
+        <a class="btn-ghost" href="/#guide">新手从哪开始</a>
+      </div>
+      <div class="mini">
+        <div><strong>1,860</strong>对局档案</div>
+        <div><strong>24</strong>位常驻解说</div>
+        <div><strong>4</strong>条棋种频道</div>
+        <div><strong>每周三、六</strong>固定直播</div>
+      </div>
+    </div>
+    <figure class="hero-art">
+      <svg viewBox="0 0 620 440" role="img" aria-label="琪棋久久棋局直播界面示意图">
+        <defs>
+          <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#0f6b52"/><stop offset="1" stop-color="#0a4a39"/>
+          </linearGradient>
+          <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#eef5f2"/>
+          </linearGradient>
+        </defs>
+        <rect x="0" y="0" width="620" height="440" rx="18" fill="url(#g2)"/>
+        <rect x="0" y="0" width="620" height="72" rx="18" fill="url(#g1)"/>
+        <rect x="0" y="52" width="620" height="20" fill="url(#g1)"/>
+        <circle cx="34" cy="36" r="13" fill="#e8b96a" opacity=".95"/>
+        <rect x="58" y="27" width="120" height="9" rx="4.5" fill="#ffffff" opacity=".82"/>
+        <rect x="58" y="42" width="78" height="7" rx="3.5" fill="#ffffff" opacity=".45"/>
+        <rect x="500" y="24" width="86" height="24" rx="12" fill="#ffffff" opacity=".18"/>
+        <rect x="514" y="33" width="58" height="7" rx="3.5" fill="#ffffff" opacity=".8"/>
+        <!-- 棋盘 -->
+        <g transform="translate(38,100)">
+          <rect x="0" y="0" width="330" height="330" rx="12" fill="#f2d9a6"/>
+          <g stroke="#b98b3f" stroke-width="1.2" opacity=".75">
+            <path d="M20 20h290M20 61h290M20 102h290M20 143h290M20 184h290M20 225h290M20 266h290M20 307h290"/>
+            <path d="M20 20v287M61 20v287M102 20v287M143 20v287M184 20v287M225 20v287M266 20v287M307 20v287"/>
+          </g>
+          <circle cx="143" cy="143" r="18" fill="#1c1f24"/>
+          <circle cx="184" cy="184" r="18" fill="#ffffff" stroke="#c9c3b3"/>
+          <circle cx="102" cy="184" r="18" fill="#1c1f24"/>
+          <circle cx="225" cy="143" r="18" fill="#ffffff" stroke="#c9c3b3"/>
+          <circle cx="184" cy="102" r="18" fill="#1c1f24"/>
+          <circle cx="143" cy="225" r="18" fill="#ffffff" stroke="#c9c3b3"/>
+          <circle cx="266" cy="184" r="18" fill="#1c1f24"/>
+          <circle cx="61" cy="143" r="18" fill="#ffffff" stroke="#c9c3b3"/>
+          <circle cx="225" cy="225" r="18" fill="#e8b96a"/>
+          <circle cx="225" cy="225" r="26" fill="none" stroke="#c8862a" stroke-width="2" stroke-dasharray="5 4"/>
+        </g>
+        <!-- 侧栏信息 -->
+        <g transform="translate(396,100)">
+          <rect x="0" y="0" width="190" height="330" rx="12" fill="#ffffff" stroke="#e2e6ec"/>
+          <rect x="14" y="16" width="86" height="8" rx="4" fill="#0f6b52" opacity=".8"/>
+          <rect x="14" y="32" width="140" height="7" rx="3.5" fill="#6b7686" opacity=".45"/>
+          <g>
+            <rect x="14" y="58" width="162" height="46" rx="8" fill="#e6f2ee"/>
+            <circle cx="36" cy="81" r="10" fill="#0f6b52"/>
+            <rect x="54" y="70" width="80" height="7" rx="3.5" fill="#0f6b52" opacity=".8"/>
+            <rect x="54" y="84" width="56" height="6" rx="3" fill="#0f6b52" opacity=".4"/>
+            <rect x="14" y="110" width="162" height="46" rx="8" fill="#f6f7f9"/>
+            <circle cx="36" cy="133" r="10" fill="#c9cfd8"/>
+            <rect x="54" y="122" width="70" height="7" rx="3.5" fill="#6b7686" opacity=".7"/>
+            <rect x="54" y="136" width="46" height="6" rx="3" fill="#6b7686" opacity=".35"/>
+            <rect x="14" y="162" width="162" height="46" rx="8" fill="#f6f7f9"/>
+            <circle cx="36" cy="185" r="10" fill="#c9cfd8"/>
+            <rect x="54" y="174" width="92" height="7" rx="3.5" fill="#6b7686" opacity=".7"/>
+            <rect x="54" y="188" width="60" height="6" rx="3" fill="#6b7686" opacity=".35"/>
+          </g>
+          <rect x="14" y="222" width="162" height="1" fill="#eef1f5"/>
+          <rect x="14" y="236" width="50" height="7" rx="3.5" fill="#6b7686" opacity=".5"/>
+          <rect x="14" y="254" width="162" height="26" rx="13" fill="#0f6b52"/>
+          <rect x="52" y="263" width="86" height="8" rx="4" fill="#ffffff" opacity=".9"/>
+          <rect x="14" y="292" width="120" height="6" rx="3" fill="#6b7686" opacity=".35"/>
+          <rect x="14" y="306" width="92" height="6" rx="3" fill="#6b7686" opacity=".25"/>
+        </g>
+      </svg>
+      <div class="floatcard"><strong>今晚 20:00</strong> · 象棋快棋夜赛 8 强解说</div>
+    </figure>
+  </div>
+</section>
+
+<!-- 主布局 -->
+<div class="wrap layout">
+
+  <!-- 左频道栏 -->
+  <aside class="side" aria-label="频道导航">
+    <div class="panel">
+      <h2>频道索引</h2>
+      <nav class="chan">
+        <a class="active" href="/#overview">品牌概览<span class="num">01</span></a>
+        <a href="/#featured">精选对局<span class="num">02</span></a>
+        <a href="/#latest">最新更新<span class="num">03</span></a>
+        <a href="/#categories">分类频道<span class="num">04</span></a>
+        <a href="/#deep">棋局解析<span class="num">05</span></a>
+        <a href="/#guide">观赛指南<span class="num">06</span></a>
+        <a href="/#faq">常见问答<span class="num">07</span></a>
+        <a href="/#comments">观众评论<span class="num">08</span></a>
+        <a href="/#news">棋坛资讯<span class="num">09</span></a>
+        <a href="/#related">延伸方向<span class="num">10</span></a>
+        <a href="/#rank">本周榜单<span class="num">11</span></a>
+      </nav>
+      <div class="divider"></div>
+      <p class="note">琪棋久久四线频道：围棋、象棋、国际象棋、五子棋。每周三与周六晚 20:00 固定直播。</p>
+    </div>
+  </aside>
+
+  <!-- 主内容 -->
+  <main>
+
+    <!-- 01 概览 -->
+    <section class="sec" id="overview">
+      <div class="sec-head">
+        <h2>棋牌视频与对局解说，都包含哪些方向</h2>
+        <span class="sub">品牌概览</span>
+      </div>
+      <div class="panel pad overview">
+        <p>
+          棋牌视频大体分四类内容：<b>对局直播</b>、<b>回放与复盘</b>、<b>残局与定式拆解</b>、<b>棋手访谈</b>。
+          琪棋久久把四条线都做了长期栏目。围棋线以职业赛事的完整对局为主，一局拆成三段解说，重点讲局面判断和官子计算；
+          象棋线偏向快棋与残局，节奏更快，适合通勤时听；国际象棋线以开局体系和战术组合训练为主，常配棋盘坐标逐格回放；
+          五子棋线体量最小，但更新最密，公开组比赛与 AI 对练复盘交替出现。
+        </p>
+        <p>
+          2026 年 11 月的更新重点是三件事：围棋天元挑战赛进入决胜阶段，第 4 局到第 6 局已排进节目单；
+          象棋快棋夜赛从 11 月 8 日起改制为 10 分钟加 5 秒，解说席上专门加了一段“读秒阶段怎么判断和棋”；
+          五子棋公开组引入禁手判定复核，凡涉及三三禁手的对局都会额外附一条规则讲解短片。
+          如果你刚开始接触棋类内容，建议从残局拆解入手，一局 8 到 12 分钟，信息密度高、门槛低。
+        </p>
+        <div class="facts">
+          <div><strong>1,860 局</strong><span>可检索对局档案</span></div>
+          <div><strong>24 位</strong><span>常驻与特邀解说</span></div>
+          <div><strong>4 条</strong><span>棋种频道</span></div>
+          <div><strong>每周 6 期</strong><span>常规节目更新</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 精选 -->
+    <section class="sec" id="featured">
+      <div class="sec-head">
+        <h2>本周精选对局与节目</h2>
+        <span class="sub">6 条可看内容</span>
+        <a class="link" href="/#latest">更多更新 →</a>
+      </div>
+      <div class="grid-cards" id="cardGrid">
+
+        <article class="card" data-key="天元挑战赛 围棋 决胜局 官子">
+          <div class="thumb">
+            <img src="https://picsum.photos/seed/tianyuan-go04/400/300" alt="围棋天元挑战赛第 4 局棋盘特写" width="400" height="300" loading="lazy">
+            <span class="type">围棋</span><span class="hot">9.4 分</span>
+          </div>
+          <div class="body">
+            <h3>天元挑战赛第 4 局：中盘弃子换来厚势</h3>
+            <p class="desc">挑战者执黑在第 87 手主动弃掉右下三子，把外势连成一片。解说用 26 分钟拆解了弃子前后的目数对比，适合正在学中盘判断的观众。</p>
+            <div class="tags"><span class="tag">赛事对局</span><span class="tag">中盘判断</span><span class="tag">弃子</span></div>
+          </div>
+        </article>
+
+        <article class="card" data-key="象棋 快棋夜赛 读秒 和棋">
+          <div class="thumb">
+            <img src="https://picsum.photos/seed/xiangqi-kuaiai07/400/300" alt="象棋快棋夜赛决赛现场棋盘" width="400" height="300" loading="lazy">
+            <span class="type">象棋</span><span class="hot">9.1 分</span>
+          </div>
+          <div class="body">
+            <h3>快棋夜赛决赛：10 分钟包干下的读秒攻防</h3>
+            <p class="desc">改制后的首场决赛，双方在第 32 回合同时进入读秒。节目保留了完整计时画面，逐回合标出哪一步是时间压力下的失误。</p>
+            <div class="tags"><span class="tag">快棋</span><span class="tag">读秒</span><span class="tag">赛事对局</span></div>
+          </div>
+        </article>
+
+        <article class="card" data-key="国际象棋 开局 意大利 战术组合">
+          <div class="thumb">
+            <img src="https://picsum.photos/seed/chess-italian12/400/300" alt="国际象棋意大利开局棋盘摆位" width="400" height="300" loading="lazy">
+            <span class="type">国际象棋</span><span class="hot">8.8 分</span>
+          </div>
+          <div class="body">
+            <h3>意大利开局 12 个常见陷阱与应对</h3>
+            <p class="desc">从 1.e4 e5 2.Nf3 Nc6 3.Bc4 起步，逐格回放业余棋手最常踩的 12 个陷阱，每个陷阱配一条三步应对，看完能直接用在快棋里。</p>
+            <div class="tags"><span class="tag">开局体系</span><span class="tag">战术训练</span><span class="tag">新手友好</span></div>
+          </div>
+        </article>
+
+        <article class="card" data-key="象棋 残局 车马 士象全">
+          <div class="thumb">
+            <img src="https://picsum.photos/seed/xiangqi-cjcanju21/400/300" alt="象棋车马残局棋型演示" width="400" height="300" loading="lazy">
+            <span class="type">残局拆解</span><span class="hot">9.0 分</span>
+          </div>
+          <div class="body">
+            <h3>车马对士象全：三种必胜与一种巧和</h3>
+            <p class="desc">公认的实用残局课题。节目把四种典型棋型摊开对比，讲清什么时候该兑士、什么时候必须先控肋道，10 分钟能记住判断顺序。</p>
+            <div class="tags"><span class="tag">实用残局</span><span class="tag">必胜棋型</span><span class="tag">象棋</span></div>
+          </div>
+        </article>
+
+        <article class="card" data-key="五子棋 禁手 三三 公开组">
+          <div class="thumb">
+            <img src="https://picsum.photos/seed/wuziqi-jinshou16/400/300" alt="五子棋三三禁手棋型示意" width="400" height="300" loading="lazy">
+            <span class="type">五子棋</span><span class="hot">8.6 分</span>
+          </div>
+          <div class="body">
+            <h3>五子棋三三禁手判定：8 个容易误判的棋型</h3>
+            <p class="desc">公开组新赛季加入禁手复核后，这类争议明显变多。节目用 8 个实战棋型讲清“活三”和“眠三”的分界，附带判定顺序口诀。</p>
+            <div class="tags"><span class="tag">规则讲解</span><span class="tag">禁手</span><span class="tag">公开组</span></div>
+          </div>
+        </article>
+
+        <article class="card" data-key="棋手访谈 围棋 职业 训练">
+          <div class="thumb">
+            <img src="https://picsum.photos/seed/qishou-fangtan33/400/300" alt="职业棋手访谈录制现场" width="400" height="300" loading="lazy">
+            <span class="type">棋手访谈</span><span class="hot">8.9 分</span>
+          </div>
+          <div class="body">
+            <h3>职业棋手访谈：一天六小时复盘是怎么安排的</h3>
+            <p class="desc">48 分钟长访谈，聊训练日程、AI 复盘工具的使用边界，以及赛前一周怎么调状态。对想系统练棋的业余棋手参考价值最高。</p>
+            <div class="tags"><span class="tag">长访谈</span><span class="tag">训练方法</span><span class="tag">职业视角</span></div>
+          </div>
+        </article>
+
+      </div>
+      <div class="empty" id="empty">没有找到匹配的对局或节目，换个棋种名或棋手名试试。</div>
+    </section>
+
+    <!-- 03 最新更新 -->
+    <section class="sec" id="latest">
+      <div class="sec-head">
+        <h2>最新更新与直播动态</h2>
+        <span class="sub">截至 2026-11-25</span>
+      </div>
+      <div class="panel pad">
+        <ul class="feed">
+          <li><span class="t">今天 09:30</span><span class="n">天元挑战赛第 4 局完整回放<small>三段解说已全部上线，含官子阶段逐手标注</small></span><span class="st">已上线</span></li>
+          <li><span class="t">今天 08:10</span><span class="n">象棋快棋夜赛 8 强对阵表公布<small>今晚 20:00 开播，四台同时进行，主台配解说</small></span><span class="st">今晚直播</span></li>
+          <li><span class="t">昨天 21:40</span><span class="n">五子棋公开组禁手复核结果<small>第 3 轮两局改判，附 6 分钟规则说明短片</small></span><span class="st">规则更新</span></li>
+          <li><span class="t">昨天 18:05</span><span class="n">国际象棋战术训练第 41 期<small>主题为“牵制与反牵制”，12 道题按难度排序</small></span><span class="st">已上线</span></li>
+          <li><span class="t">11 月 23 日</span><span class="n">车马对士象全残局专题<small>新增 3 个实战棋型，总时长 26 分钟</small></span><span class="st">已上线</span></li>
+          <li><span class="t">11 月 22 日</span><span class="n">职业棋手访谈第 18 期<small>嘉宾聊 AI 复盘工具的使用边界，48 分钟</small></span><span class="st">已上线</span></li>
+          <li><span class="t">11 月 21 日</span><span class="n">围棋定式更新：小目低挂新变化<small>整理近三个月职业对局中出现的 7 个新变化</small></span><span class="st">资料更新</span></li>
+          <li><span class="t">11 月 20 日</span><span class="n">五子棋 AI 对练复盘第 9 集<small>聚焦开局第 4 手的选择差异，附胜率曲线</small></span><span class="st">已上线</span></li>
+          <li><span class="t">11 月 19 日</span><span class="n">象棋快棋改制说明会实录<small>10 分钟加 5 秒的计时细节与和棋判定口径</small></span><span class="st">规则更新</span></li>
+          <li><span class="t">11 月 18 日</span><span class="n">国际象棋开局库扩充至 168 套<small>新增西西里防御四个分支，支持按步数检索</small></span><span class="st">资料更新</span></li>
+          <li><span class="t">11 月 17 日</span><span class="n">围棋天元挑战赛第 3 局解说<small>重点讲左下角的劫争处理，含 4 个分支变化图</small></span><span class="st">已上线</span></li>
+          <li><span class="t">11 月 16 日</span><span class="n">观众投稿残局第 26 期<small>投稿 14 局，入选 5 局，逐局给出胜负判断</small></span><span class="st">已上线</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 04 分类入口 -->
+    <section class="sec" id="categories">
+      <div class="sec-head">
+        <h2>按棋种与内容类型进入</h2>
+        <span class="sub">8 个分类</span>
+      </div>
+      <div class="cats">
+        <a class="cat" href="/#featured"><em>棋种</em><b>围棋对局</b><span>职业赛事完整回放，分段解说官子与中盘判断</span></a>
+        <a class="cat" href="/#featured"><em>棋种</em><b>象棋快棋</b><span>10 分钟包干赛制，读秒阶段的攻防与和棋判断</span></a>
+        <a class="cat" href="/#featured"><em>棋种</em><b>国际象棋</b><span>开局体系、战术组合训练、逐格坐标回放</span></a>
+        <a class="cat" href="/#featured"><em>棋种</em><b>五子棋</b><span>公开组赛事与 AI 对练复盘，含禁手判定讲解</span></a>
+        <a class="cat" href="/#deep"><em>内容类型</em><b>残局拆解</b><span>8 到 12 分钟一局，讲判断顺序而不是背结论</span></a>
+        <a class="cat" href="/#deep"><em>内容类型</em><b>开局定式</b><span>按棋种整理常用开局与近期出现的新变化</span></a>
+        <a class="cat" href="/#comments"><em>内容类型</em><b>棋手访谈</b><span>训练方法、赛前状态调整、AI 工具的使用边界</span></a>
+        <a class="cat" href="/#guide"><em>内容类型</em><b>新手入门</b><span>从规则到第一局实战的完整观看顺序建议</span></a>
+      </div>
+    </section>
+
+    <!-- 05 深度解析 -->
+    <section class="sec" id="deep">
+      <div class="sec-head">
+        <h2>棋局解析：为什么同一盘棋会有两种讲法</h2>
+        <span class="sub">深度阅读</span>
+      </div>
+      <div class="panel pad deep">
+        <article>
+          <h3>一、赛事解说与教学复盘，目标完全不同</h3>
+          <p>
+            同一盘围棋对局，赛事解说关注的是“此刻谁更接近胜利”，教学复盘关注的是“这手棋的依据能不能被复用”。
+            前者必须跟着读秒节奏走，遇到复杂劫争只能点到为止；后者可以把一手棋拆成二十分钟，把三条被否掉的分支都摆出来。
+            琪棋久久的天元挑战赛系列通常提供两个版本：直播版 90 分钟左右，复盘版 150 分钟以上，观众可以按需求选择。
+          </p>
+          <p>
+            判断一档解说是不是教学型，看两点就够了：有没有明确说出被否定的变化，以及有没有给出可迁移的判断顺序。
+            只讲“这手好”而不讲“另外两手为什么不好”的，基本属于情绪型解说，适合看热闹，不适合当训练材料。
+          </p>
+
+          <h3>二、象棋快棋的“读秒质量”比开局更重要</h3>
+          <p>
+            改制为 10 分钟加 5 秒之后，象棋快棋的胜负分布明显后移。前 20 回合双方几乎都在走熟悉的套路，
+            真正的分水岭出现在剩余 2 分钟左右。这个阶段能看出三类能力差异：
+          </p>
+          <ul>
+            <li>时间分配：把 30 秒花在一步无关紧要的兑子上，等于提前缴械。</li>
+            <li>简化能力：读秒时优先走能减少分支的棋，而不是看起来最凶的棋。</li>
+            <li>和棋判断：士象全对车马这类局面，早一步认清和棋能省下大量时间。</li>
+          </ul>
+          <p>
+            所以看快棋对局时，与其盯着开局谁占优，不如直接跳到双方剩余时间接近的回合，观察谁的动作更简洁。
+            这个视角也解释了为什么快棋夜赛的解说席总要单独安排一段读秒分析。
+          </p>
+
+          <h3>三、国际象棋开局库不是背得越多越好</h3>
+          <p>
+            业余棋手最常见的误区，是把开局库当成记忆量竞赛。实际对局里，对手在第 6 手就走偏的概率并不低，
+            这时候能不能立刻切换到“原则模式”才是关键。意大利开局之所以适合入门，不是因为变化少，
+            而是因为它把三条核心原则摊得很清楚：中心控制、出子速度、王的安全。
+          </p>
+          <p>
+            一个可操作的训练方式是：每个开局只记前 8 手，剩下的靠原则推导；每局结束后回看自己第一次脱离棋谱的那一手，
+            判断当时是原则没掌握，还是计算不够深。前者补理论，后者做战术题，两条路不能混着走。
+          </p>
+
+          <h3>四、五子棋的规则复杂度被严重低估</h3>
+          <p>
+            很多人以为五子棋只是“先连成五个”，但公开组采用禁手规则后，判断链条会变长：
+            先确认落子点是否形成双三或双四，再确认是否属于长连，最后才看是否成五。
+            顺序错了，结论就会反。11 月公开组的两局改判，问题都出在第一步把“眠三”误认为“活三”。
+          </p>
+          <p>
+            想把这条规则真正学会，光看文字不够，得对着棋型反复练。建议按“单点判定—多子联动—整盘复核”三步走，
+            每步配 10 个棋型，练完基本能应付业余比赛中的绝大多数争议。
+          </p>
+
+          <h3>五、残局是最划算的学习入口</h3>
+          <p>
+            残局的变量少、结论明确，一局 8 到 12 分钟就能讲透一个判断。对比之下，中盘讲解往往要铺垫半小时才有结论。
+            对象棋初学者来说，先啃“车马对士象全”“单马擒孤士”这类经典课题，比一上来研究布局效率高得多。
+            围棋同理，从官子的大小比较入手，能很快建立目数感。
+          </p>
+        </article>
+        <aside class="aside-note">
+          <h4>选择解说版本的四条依据</h4>
+          <ol>
+            <li>先看时长：90 分钟以内偏观赛，150 分钟以上偏教学。</li>
+            <li>看是否列出被否定的变化，这是教学型解说的标志。</li>
+            <li>残局专题优先选带判断顺序的，而非只给结论的。</li>
+            <li>快棋对局直接看读秒阶段，效率最高。</li>
+          </ol>
+        </aside>
+      </div>
+    </section>
+
+    <!-- 06 观赛指南 -->
+    <section class="sec" id="guide">
+      <div class="sec-head">
+        <h2>观看顺序与投入判断</h2>
+        <span class="sub">三条路径</span>
+      </div>
+      <div class="paths">
+        <div class="path">
+          <span class="step">路径 A · 零基础</span>
+          <h3>先用两周建立规则感</h3>
+          <p>适合完全没接触过棋类内容、只想先看懂在发生什么的人。</p>
+          <ul>
+            <li>第 1—3 天：各棋种规则讲解短片</li>
+            <li>第 4—7 天：残局拆解入门 5 期</li>
+            <li>第 8—14 天：完整对局回放 2 局</li>
+          </ul>
+        </div>
+        <div class="path">
+          <span class="step">路径 B · 会下想提高</span>
+          <h3>按薄弱环节定向补</h3>
+          <p>已经能完整下完一局，但常在固定阶段出问题。</p>
+          <ul>
+            <li>中盘弱：看弃子与厚势专题</li>
+            <li>官子弱：看目数比较系列</li>
+            <li>时间管理弱：看快棋读秒分析</li>
+          </ul>
+        </div>
+        <div class="path">
+          <span class="step">路径 C · 只看热闹</span>
+          <h3>挑解说节奏快的看</h3>
+          <p>不打算练棋，只想看得明白、看得进去。</p>
+          <ul>
+            <li>优先选直播版而非复盘版</li>
+            <li>快棋对局比慢棋更紧凑</li>
+            <li>棋手访谈适合当背景音</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 FAQ -->
+    <section class="sec faq" id="faq">
+      <div class="sec-head">
+        <h2>常见问答</h2>
+        <span class="sub">6 个问题</span>
+      </div>
+      <details>
+        <summary>围棋对局回放一般多久更新一次？</summary>
+        <div class="ans">常规赛事对局在赛后 24 小时内上线直播版，复盘版延后 1 到 2 天。天元挑战赛这类重点赛事会当天上线分段解说，官子阶段单独成段。非赛事期间每周固定更新两期专题内容。</div>
+      </details>
+      <details>
+        <summary>象棋快棋和慢棋的解说重点有什么区别？</summary>
+        <div class="ans">快棋解说把大量篇幅放在时间分配和简化选择上，因为 10 分钟包干制下，读秒阶段才是胜负分水岭。慢棋解说则更关注局面判断和长远计划，中盘的战略取舍会讲得更细。两者不宜用同一套标准评价。</div>
+      </details>
+      <details>
+        <summary>第一次接触棋牌视频，从哪个条目开始看比较好？</summary>
+        <div class="ans">建议从残局拆解入手，单集 8 到 12 分钟，结论明确、不需要前置知识。围棋可以看官子大小比较系列，象棋看车马对士象全专题，国际象棋看战术训练第 41 期。看完再进入完整对局回放，理解成本会低很多。</div>
+      </details>
+      <details>
+        <summary>五子棋的禁手判定通常看哪几步？</summary>
+        <div class="ans">顺序是先判断落子点是否形成双三或双四，再确认是否构成长连，最后才看是否成五。顺序颠倒容易得出相反结论。业余比赛中最常见的误判是把眠三当成活三，建议对着棋型库反复练单点判定。</div>
+      </details>
+      <details>
+        <summary>国际象棋开局要背多少手才够用？</summary>
+        <div class="ans">业余对局里前 8 手足够覆盖大多数情况，之后靠中心控制、出子速度、王的安全三条原则推导。与其扩充记忆量，不如每局复盘自己第一次脱离棋谱的那一手，判断是原则问题还是计算问题。</div>
+      </details>
+      <details>
+        <summary>赛事解说和教学复盘，该选哪一个？</summary>
+        <div class="ans">想快速了解结果和关键转折，选赛事解说版，通常 90 分钟以内；想真正学到可复用的判断方法，选教学复盘版，150 分钟以上，会列出被否定的变化。两者对同一盘棋的结论可能一致，但信息密度差别很大。</div>
+      </details>
+    </section>
+
+    <!-- 08 评论 -->
+    <section class="sec" id="comments">
+      <div class="sec-head">
+        <h2>观众在聊什么</h2>
+        <span class="sub">14 条评论</span>
+      </div>
+      <div class="comments">
+        <div class="cmt"><div class="who"><i>棋</i>半山听雨<time>今天 10:22</time></div><p>天元第 4 局那段弃子讲得清楚，尤其是把弃子前后的目数直接列出来，比只说“厚势很大”有用多了。</p></div>
+        <div class="cmt"><div class="who"><i>弈</i>老周下棋<time>今天 09:47</time></div><p>快棋夜赛改制后好看了不少，读秒阶段真的会犯错。就是解说有时候跟不上四台同时下，主台以外的对局信息少了点。</p></div>
+        <div class="cmt"><div class="who"><i>五</i>五子连珠客<time>昨天 22:15</time></div><p>禁手那期看两遍才明白眠三和活三的差别，建议以后每个棋型多停两秒，现在节奏有点赶。</p></div>
+        <div class="cmt"><div class="who"><i>象</i>楚河汉界<time>昨天 20:38</time></div><p>车马对士象全专题是目前看到最实用的残局内容，判断顺序讲得很具体，不像有些节目只给结论。</p></div>
+        <div class="cmt"><div class="who"><i>国</i>西西里防御<time>昨天 19:02</time></div><p>战术训练第 41 期难度排序合理，前 4 题基本能秒，后 3 题卡了很久，这种难度梯度挺舒服。</p></div>
+        <div class="cmt"><div class="who"><i>棋</i>落子无悔<time>11 月 24 日</time></div><p>访谈那期提到 AI 复盘的边界，说得比较克制。不像有些内容把引擎结论当成唯一答案。</p></div>
+        <div class="cmt"><div class="who"><i>久</i>久坐观棋<time>11 月 24 日</time></div><p>新手路径那张图挺直观，就是希望标注一下每步大概要花多少时间，不然不知道两周够不够。</p></div>
+        <div class="cmt"><div class="who"><i>围</i>小目低挂<time>11 月 23 日</time></div><p>定式更新整理得不错，7 个新变化都配了图。不过有两个变化在职业对局里只出现一次，样本还是偏少。</p></div>
+        <div class="cmt"><div class="who"><i>残</i>官子三分<time>11 月 23 日</time></div><p>官子大小比较那几期反复看，目数感确实有提升。希望能出一个专门的练习册，光看视频记不住。</p></div>
+        <div class="cmt"><div class="who"><i>快</i>十秒一步<time>11 月 22 日</time></div><p>读秒分析这段是精华，以前下快棋总是前面想太多后面乱走，现在知道该在哪一步开始简化了。</p></div>
+        <div class="cmt"><div class="who"><i>棋</i>木野狐<time>11 月 21 日</time></div><p>整体节奏偏稳，偶尔希望直播版能再紧凑一点。复盘版长度倒是可以接受，反正可以分段看。</p></div>
+        <div class="cmt"><div class="who"><i>五</i>斜月三星<time>11 月 20 日</time></div><p>AI 对练复盘第 9 集讲开局第 4 手，这个切入点很细，比我之前看的泛讲开局的内容有用。</p></div>
+        <div class="cmt"><div class="who"><i>象</i>过河卒子<time>11 月 19 日</time></div><p>改制说明会实录建议置顶，很多人还在按老的 15 分钟赛制理解对局节奏，容易看错关键回合。</p></div>
+        <div class="cmt"><div class="who"><i>久</i>一局半钟头<time>11 月 18 日</time></div><p>投稿残局那期入选的 5 局水平差距有点大，建议按难度分组，不然看起来跳来跳去。</p></div>
+      </div>
+    </section>
+
+    <!-- 09 资讯 -->
+    <section class="sec" id="news">
+      <div class="sec-head">
+        <h2>棋坛资讯</h2>
+        <span class="sub">6 条 · 11 月</span>
+      </div>
+      <ul class="news">
+        <li>
+          <img src="https://picsum.photos/seed/news-tianyuan11/600/400" alt="围棋天元挑战赛决胜阶段现场" width="600" height="400" loading="lazy">
+          <div>
+            <h3>天元挑战赛进入决胜阶段，第 5 局定于 11 月 28 日</h3>
+            <time>2026-11-25</time>
+            <p>前四局战成 2:2，第 5 局将决定挑战权归属。琪棋久久将同步上线分段解说，官子阶段单独成段。</p>
+          </div>
+        </li>
+        <li>
+          <img src="https://picsum.photos/seed/news-xiangqi08/600/400" alt="象棋快棋夜赛改制说明会" width="600" height="400" loading="lazy">
+          <div>
+            <h3>象棋快棋夜赛改制满三周，和棋比例下降 11%</h3>
+            <time>2026-11-23</time>
+            <p>10 分钟加 5 秒的赛制让读秒阶段的对攻明显增多，和棋比例从改制前的 34% 降到 23%。</p>
+          </div>
+        </li>
+        <li>
+          <img src="https://picsum.photos/seed/news-wuziqi05/600/400" alt="五子棋公开组禁手复核现场" width="600" height="400" loading="lazy">
+          <div>
+            <h3>五子棋公开组完成第三轮禁手复核，两局改判</h3>
+            <time>2026-11-24</time>
+            <p>争议集中在三三禁手的判定顺序，组委会同步发布 6 分钟规则说明短片，供参赛者统一口径。</p>
+          </div>
+        </li>
+        <li>
+          <img src="https://picsum.photos/seed/news-chess14/600/400" alt="国际象棋开局库检索界面" width="600" height="400" loading="lazy">
+          <div>
+            <h3>国际象棋开局库扩充至 168 套，新增四个西西里分支</h3>
+            <time>2026-11-18</time>
+            <p>支持按步数检索与分支对比，业余棋手可按“前 8 手”快速定位自己需要的体系。</p>
+          </div>
+        </li>
+        <li>
+          <img src="https://picsum.photos/seed/news-fangtan09/600/400" alt="职业棋手访谈录制现场灯光" width="600" height="400" loading="lazy">
+          <div>
+            <h3>棋手访谈第 18 期上线，聊 AI 复盘工具的使用边界</h3>
+            <time>2026-11-22</time>
+            <p>嘉宾提出引擎结论应作为验证手段而非唯一答案，并给出自己赛前一周的复盘安排。</p>
+          </div>
+        </li>
+        <li>
+          <img src="https://picsum.photos/seed/news-canju17/600/400" alt="观众投稿残局棋型展示" width="600" height="400" loading="lazy">
+          <div>
+            <h3>观众投稿残局第 26 期收到 14 局，5 局入选</h3>
+            <time>2026-11-16</time>
+            <p>入选标准为“有明确胜负判断且存在至少一个易错分支”，逐局给出结论与关键手。</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 10 相关推荐 -->
+    <section class="sec" id="related">
+      <div class="sec-head">
+        <h2>延伸方向</h2>
+        <span class="sub">8 个索引</span>
+      </div>
+      <div class="relgrid">
+        <a href="/#deep"><b>官子目数比较</b><small>围棋 · 判断训练</small></a>
+        <a href="/#deep"><b>弃子与厚势转换</b><small>围棋 · 中盘专题</small></a>
+        <a href="/#featured"><b>车马对士象全</b><small>象棋 · 实用残局</small></a>
+        <a href="/#featured"><b>读秒阶段简化选择</b><small>象棋 · 快棋方法</small></a>
+        <a href="/#featured"><b>意大利开局陷阱</b><small>国际象棋 · 开局</small></a>
+        <a href="/#featured"><b>牵制与反牵制</b><small>国际象棋 · 战术</small></a>
+        <a href="/#featured"><b>三三禁手判定顺序</b><small>五子棋 · 规则</small></a>
+        <a href="/#comments"><b>训练日程安排</b><small>棋手访谈 · 方法</small></a>
+      </div>
+    </section>
+
+    <!-- 11 榜单 -->
+    <section class="sec" id="rank">
+      <div class="sec-head">
+        <h2>本周观看榜</h2>
+        <span class="sub">统计至 2026-11-25</span>
+      </div>
+      <div class="panel pad">
+        <ol class="rank">
+          <li><span class="no">1</span><span><b>天元挑战赛第 4 局：中盘弃子换来厚势</b><small>围棋 · 三段解说 · 186 分钟</small></span><span class="score">9.4</span></li>
+          <li><span class="no">2</span><span><b>快棋夜赛决赛：10 分钟包干下的读秒攻防</b><small>象棋 · 直播版 · 142 分钟</small></span><span class="score">9.1</span></li>
+          <li><span class="no">3</span><span><b>车马对士象全：三种必胜与一种巧和</b><small>象棋 · 残局拆解 · 26 分钟</small></span><span class="score">9.0</span></li>
+          <li><span class="no">4</span><span><b>职业棋手访谈：一天六小时复盘是怎么安排的</b><small>访谈 · 长节目 · 48 分钟</small></span><span class="score">8.9</span></li>
+          <li><span class="no">5</span><span><b>意大利开局 12 个常见陷阱与应对</b><small>国际象棋 · 战术训练 · 34 分钟</small></span><span class="score">8.8</span></li>
+          <li><span class="no">6</span><span><b>五子棋三三禁手判定：8 个容易误判的棋型</b><small>五子棋 · 规则讲解 · 21 分钟</small></span><span class="score">8.6</span></li>
+          <li><span class="no">7</span><span><b>围棋定式更新：小目低挂新变化</b><small>围棋 · 资料更新 · 39 分钟</small></span><span class="score">8.5</span></li>
+          <li><span class="no">8</span><span><b>观众投稿残局第 26 期</b><small>综合 · 逐局判断 · 31 分钟</small></span><span class="score">8.3</span></li>
+        </ol>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- 页尾 -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <a class="brand" href="/#top" aria-label="琪棋久久首页">
+          <svg class="mark" viewBox="0 0 40 40" aria-hidden="true">
+            <rect x="1" y="1" width="38" height="38" rx="10" fill="#0f6b52"/>
+            <g stroke="#8fd8be" stroke-width="1.1" opacity=".55">
+              <path d="M10 10h20M10 17h20M10 24h20M10 31h20"/>
+              <path d="M10 10v21M17 10v21M24 10v21M31 10v21"/>
+            </g>
+            <circle cx="17" cy="17" r="4.4" fill="#ffffff"/>
+            <circle cx="24" cy="24" r="4.4" fill="#e8b96a"/>
+            <circle cx="24" cy="17" r="2.6" fill="#ffffff" opacity=".9"/>
+            <circle cx="17" cy="24" r="2.6" fill="#ffffff" opacity=".55"/>
+          </svg>
+          <span class="name">琪<em>棋</em>久久</span>
+        </a>
+        <p class="about">琪棋久久专注棋牌视频与对局解说，覆盖围棋、象棋、国际象棋、五子棋四条频道，提供对局回放、残局拆解、规则讲解与棋手访谈。</p>
+      </div>
+      <div>
+        <h4>频道</h4>
+        <ul>
+          <li><a href="/#featured">围棋对局</a></li>
+          <li><a href="/#featured">象棋快棋</a></li>
+          <li><a href="/#featured">国际象棋</a></li>
+          <li><a href="/#featured">五子棋</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>内容类型</h4>
+        <ul>
+          <li><a href="/#deep">残局拆解</a></li>
+          <li><a href="/#deep">开局定式</a></li>
+          <li><a href="/#comments">棋手访谈</a></li>
+          <li><a href="/#guide">新手入门</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>栏目</h4>
+        <ul>
+          <li><a href="/#latest">最新更新</a></li>
+          <li><a href="/#rank">本周榜单</a></li>
+          <li><a href="/#faq">常见问答</a></li>
+          <li><a href="/#news">棋坛资讯</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>© 2026 琪棋久久 · 棋牌视频与对局解说</span>
+      <span>对局档案与热度数据为站内统计口径，截止 2026-11-25</span>
+      <span>节目内容版权归各赛事方与解说作者所有</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var input = document.getElementById('q');
+  var btn = document.getElementById('searchBtn');
+  var cards = Array.prototype.slice.call(document.querySelectorAll('#cardGrid .card'));
+  var empty = document.getElementById('empty');
+
+  function run(){
+    var kw = (input.value || '').trim().toLowerCase();
+    if(!kw){
+      cards.forEach(function(c){ c.style.display = ''; });
+      empty.classList.remove('show');
+      return;
+    }
+    var hit = 0;
+    cards.forEach(function(c){
+      var text = (c.textContent + ' ' + (c.getAttribute('data-key') || '')).toLowerCase();
+      var ok = text.indexOf(kw) !== -1;
+      c.style.display = ok ? '' : 'none';
+      if(ok) hit++;
+    });
+    empty.classList.toggle('show', hit === 0);
+  }
+
+  btn.addEventListener('click', run);
+  input.addEventListener('keydown', function(e){
+    if(e.key === 'Enter'){ e.preventDefault(); run(); }
+  });
+  input.addEventListener('input', function(){
+    if(!input.value.trim()) run();
+  });
+})();
+</script>
+</body>
+  </html>
